@@ -1,0 +1,26 @@
+{
+  "name": "hashcrypt/smtp",
+  "description": "N/A",
+  "require": {
+    "php": "~5.5.0|~5.6.0|~7.0.0"
+  },
+  "type": "magento2-module",
+  "license": [ 
+  ],
+  "authors": [
+    {
+      "name": "Blanka",
+      "email": "contact@hashcrypt.com",
+      "homepage": "https://www.hashcrypt.com/",
+      "role": "Developer"
+    }
+  ],
+  "autoload": {
+    "files": [
+      "registration.php"
+    ],
+    "psr-4": {
+      "Hashcrypt\\Smtp\\": ""
+    }
+  }
+}

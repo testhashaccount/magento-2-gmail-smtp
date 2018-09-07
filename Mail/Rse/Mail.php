@@ -4,14 +4,19 @@
  *
  * NOTICE OF LICENSE
  *
- * This source file is subject to the hashcrypt.com license that is
+ * This source file is subject to the Hashcrypt.com license that is
  * available through the world-wide-web at this URL:
+ * https://www.hashcrypt.com/license.txt
  *
  * DISCLAIMER
  *
  * Do not edit or add to this file if you wish to upgrade this extension to newer
  * version in the future.
  *
+ * @category    Hashcrypt
+ * @package     Hashcrypt_Smtp
+ * @copyright   Copyright (c) 2018 Hashcrypt Technologies (http://www.hashcrypt.com/)
+ * @license     https://www.hashcrypt.com/license.txt
  */
 namespace Hashcrypt\Smtp\Mail\Rse;
 

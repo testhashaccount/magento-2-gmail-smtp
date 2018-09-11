@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <!--
 /**
  * Hashcrypt Technologies
@@ -19,7 +20,6 @@
  * @license     https://www.hashcrypt.com/license.txt
  */
 -->
-<?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:ObjectManager/etc/config.xsd">
    <type name="Magento\Framework\Mail\TransportInterface">
         <plugin name="hash_mail_transport" type="Hashcrypt\Smtp\Magento\Mail\Transport" sortOrder="1" disabled="false"/>

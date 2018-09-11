@@ -1,3 +1,4 @@
+<?xml version="1.0"?>
 <!--
 /**
  * Hashcrypt Technologies
@@ -19,19 +20,18 @@
  * @license     https://www.hashcrypt.com/license.txt
  */
 -->
-<?xml version="1.0"?>
 <config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Config:etc/system_file.xsd">
     <system>
-        <tab id="smtp_tab" translate="label" sortOrder="10">
-            <label>Gmail Smtp</label>
+        <tab id="hash_tab" translate="label" sortOrder="10">
+            <label>Hashcrypt Technologies</label>
         </tab>
         <section id="smtp" translate="label" sortOrder="130" showInDefault="1" showInWebsite="1" showInStore="1">
             <class>separator-top</class>
-            <label>Account Configuration</label>
-            <tab>smtp_tab</tab>
+            <label>SMTP Configuration</label>
+            <tab>hash_tab</tab>
             <resource>Hashcrypt_Smtp::config_manufacturer</resource>
             <group id="general" translate="label" type="text" sortOrder="10" showInDefault="1" showInWebsite="1" showInStore="1">
-                <label>Account Configuration</label>
+                <label>SMTP Configuration</label>
                 <field id="email" translate="label" type="text" sortOrder="1" showInDefault="1" showInWebsite="1" showInStore="1">
                     <label>Email</label>
                     <validate>validate-email</validate>

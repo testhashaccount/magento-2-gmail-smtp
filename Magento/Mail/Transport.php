@@ -26,6 +26,7 @@ use Magento\Framework\Phrase;
 use Magento\Framework\Registry;
 use Hashcrypt\Smtp\Mail\Rse\Mail;
 use Psr\Log\LoggerInterface;
+use Hashcrypt\Smtp\Helper\Data;
 
 /**
  * Class Transport
@@ -44,10 +45,6 @@ class Transport
     protected $resourceMail;
 
     /**
-     * @var \Hashcrypt\Smtp\Model\LogFactory
-     */
-
-    /**
      * @var \Magento\Framework\Registry $registry
      */
     protected $registry;
@@ -61,6 +58,10 @@ class Transport
      * @var LoggerInterface
      */
     protected $logger;
+     /**
+     * @var \Magento\Framework\App\ProductMetadataInterface $productMetadata
+     */
+    protected $productMetadata;
 
     /**
      * Transport constructor.
@@ -72,11 +73,15 @@ class Transport
      */
     public function __construct(
         Mail $resourceMail,
-        Registry $registry
+        Registry $registry,
+        Data $helper,
+        \Magento\Framework\App\ProductMetadataInterface $productMetadata
     )
     {
         $this->resourceMail = $resourceMail;
         $this->registry     = $registry;
+        $this->helper       = $helper;
+        $this->productMetadata = $productMetadata;
     }
 
     /**
@@ -106,7 +111,11 @@ class Transport
      */
      protected function getMessage($transport)
      {
-         try {
+        $version = $this->productMetadata->getVersion();
+        if ($this->helper->versionCompare($version)){
+            return $transport->getMessage();
+        }  
+        try {
              $reflectionClass = new \ReflectionClass($transport);
              $message         = $reflectionClass->getProperty('_message');
              $message->setAccessible(true);

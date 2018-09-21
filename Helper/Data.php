@@ -38,5 +38,14 @@ class Data extends \Magento\Framework\App\Helper\AbstractHelper
 	{
 		return $this->getConfigValue(self::XML_PATH_HELLOWORLD .'general/'. $code, $storeId);
 	}
-	
+	public function versionCompare($verion){
+		$ve = explode('.',$verion);
+		if($ve[1] >= 2){
+			if($ve[2] >= 0){
+				return true;
+			}else{
+				return false;
+			}
+		}
+	}
 }
